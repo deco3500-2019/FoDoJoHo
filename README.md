@@ -2,7 +2,8 @@
 The boys taking on SoMoLo.
 
 # Project Name Here
-***
+### Better Habit Battle Royal
+
 ## Link To Project Proposal
 link to wiki page here for proposal
 
