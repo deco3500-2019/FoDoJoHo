@@ -85,3 +85,6 @@
   line-height: 1.5;
   word-wrap: break-word;
 }
+a svg {
+  display: none;
+}
