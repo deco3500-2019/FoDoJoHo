@@ -5,10 +5,10 @@ The boys taking on SoMoLo.
 ### Better Habit Battle Royal
 
 ## Link To Project Proposal
-link to wiki page here for proposal
+https://github.com/deco3500-2019/FoDoJoHo/wiki/Project-Proposal:-Bad-Habits-Battle-Royale
 
 ## Link to Final Report
-https://github.com/deco3500-2019/TEMPLATE/wiki/Proposal
+link to final report
 
 ## Link to Working Prototype, Promotional Material, and Documentation  
 link to relevant links for prototype, promotional material & documentation
