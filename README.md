@@ -2,7 +2,7 @@
 The boys taking on SoMoLo.
 
 # Project Name Here
-### Better Habit Battle Royal
+### Bad Habits Battle Royal
 
 ## Link To Project Proposal
 https://github.com/deco3500-2019/FoDoJoHo/wiki/Project-Proposal:-Bad-Habits-Battle-Royale
