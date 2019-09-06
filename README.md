@@ -4,7 +4,7 @@ The boys taking on SoMoLo.
 # Bad Habits Battle Royal
 
 ## Link To Project Proposal
-https://github.com/deco3500-2019/FoDoJoHo/wiki/Project-Proposal:-Bad-Habits-Battle-Royale
+https://github.com/deco3500-2019/FoDoJoHo/wiki/Proposal
 
 ## Link to Final Report
 link to final report
