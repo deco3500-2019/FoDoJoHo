@@ -1,0 +1,27 @@
+#addLobbyForm {
+    display: none;
+}
+
+#addLobbyForm {
+    width: 100%;
+    z-index: 2;
+    height: 100%;
+    max-height: 1080px;
+    position: fixed;
+    background: rgba(70, 71, 72, 0.69);
+}
+
+#lobbyFormatting { 
+	width: 300px;  
+    margin: 0 auto;
+    background: white;
+    margin-top: 5%;
+    border: 1px solid #9E9E9E;
+    border-radius: .25em .25em .4em .4em;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#popupClose:hover {
+    color: red;
+}
