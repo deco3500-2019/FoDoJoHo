@@ -8,6 +8,7 @@ html{
 }
 .content{
     height: 85%;
+    overflow: auto;
 }
 .home{
     background-color: #ffd04d;
@@ -30,11 +31,20 @@ html{
 .navbar .navbar-brand  {
     background-color: #ffd04d;
     margin: 0 auto 0 auto;
+    
   }
+.navbar a, .navbar a:visited ,.navbar a:hover ,.navbar a:active {
+    text-decoration: none;
+    color: black;
+}
+
 footer{
     height: 5%;
 }
 .footer-custom{
     width: 400px;
     margin: auto;
+}
+.lobbies{
+    
 }

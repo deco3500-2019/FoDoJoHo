@@ -1,9 +1,4 @@
 <?php 
-require_once "scripts/connectDatabase.php";
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +28,15 @@ require_once "scripts/connectDatabase.php";
 
     <div class="name">
     <h1>
-            Bad Habit
+            BETTER HABBIT
         </h1>
         <h2>
             Battle Royale
         </h2>
-        <a href="profile.php" type="button" class="btn btn-warning">Start</a>
+        <br>
+        <br>
+
+        <a href="user_check.php" type="button" class="btn btn-warning">Start</a>
     </div>
         
     </div>
