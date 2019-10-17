@@ -1,0 +1,40 @@
+html{
+    height: 100%;
+}
+#container{
+    width: 400px;
+    margin: auto;
+    height: 800px;
+}
+.content{
+    height: 85%;
+}
+.home{
+    background-color: #ffd04d;
+    width: 400px;
+    height: 800px;
+    margin: auto
+}
+.home .name{
+    padding-top: 50%;
+    padding-bottom: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-custom{
+    background-color: #ffd04d;
+    box-shadow: 0 6px 6px 1px rgba(0,0,0,0.23);
+    height: 10%;
+}
+.navbar .navbar-brand  {
+    background-color: #ffd04d;
+    margin: 0 auto 0 auto;
+  }
+footer{
+    height: 5%;
+}
+.footer-custom{
+    width: 400px;
+    margin: auto;
+}

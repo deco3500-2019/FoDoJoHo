@@ -1,6 +1,9 @@
 <?php
     session_start();
+
+    
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,10 +45,10 @@
             </button>
         </div>
     </body>
-
-    <?php
-        include 'scripts/lobbyLoader.php'
-    ?>
+<?php 
+include 'scripts/lobbyLoader.php'
+?>
+    
     <script src="scripts/addPopup.js" type="text/javascript"></script>
     
 </html>

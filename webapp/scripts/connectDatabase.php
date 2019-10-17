@@ -7,7 +7,7 @@
 <?php
 class mySQLDatabase {
 
-    private $link = null;
+    //private $link = null;
     private $dbhost = 'localhost';
     private $dbuser = 'root';
     private $dbpassword = '';
