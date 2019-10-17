@@ -1,6 +1,29 @@
 <?php 
+session_start();
 require_once "scripts/connectDatabase.php";
+$db = new MySQLDatabase();
+$db->connect();
 
+    $profile_name = $_COOKIE["username"];
+        // $query = "SELECT * FROM users WHERE email = '$email'";
+        // $result = $conn->query($query);
+
+    $query = "SELECT * FROM participant_details WHERE name = '$profile_name' ";
+    $select = $db->query($query);
+    $row = mysqli_fetch_array($select);
+
+    setcookie("userid", $row['participantID'], time() + 60*60*24, "/");
+
+
+
+
+        /*while($row = mysqli_fetch_array($result)) {
+            print "Name: {$row['username']} has ID: {$row['userId']}";
+        }*/
+        
+    
+    
+  
 
 
 
@@ -37,13 +60,15 @@ require_once "scripts/connectDatabase.php";
 
         <div class="content">
 
-            <form name="loginSim" action="scripts/setup.php" method="POST">
-                <p> 
-                    Name: 
-                    <input type="text" name="name" required> 
-                    <button type="submit">Start</button>
-                </p>
-            </form>
+            <h4>Profile</h4>
+            <hr>
+            <div class="profile">
+                <H2><?php echo $row["name"]?></H2>
+                <H2><?php echo $row["age"]?></H2>
+                <H2><?php echo $row["city"]?></H2>
+                
+            </div>
+
         </div>
       
         <?php include "footer.php"?>

@@ -9,6 +9,10 @@ html{
 .content{
     height: 85%;
     overflow: auto;
+    text-align: center;
+}
+.content h4{
+    padding-top: 20px;
 }
 .home{
     background-color: #ffd04d;

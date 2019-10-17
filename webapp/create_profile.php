@@ -15,6 +15,7 @@ if (isset($_POST["username"]) && isset($_POST["age"]) && isset($_POST["city"])) 
     
     setcookie("username", $username, time() + 60*60*24, "/");
     $_SESSION["username"] = $username;
+    
                 
     header("Location: profile.php");
         

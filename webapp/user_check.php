@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "scripts/connectDatabase.php";
 $db = new MySQLDatabase();
 $db->connect();
@@ -9,9 +10,9 @@ if (isset($_POST["name"]) ) {
         // $query = "SELECT * FROM users WHERE email = '$email'";
         // $result = $conn->query($query);
 
-    $query = "SELECT Name FROM participant_details ";
+    $query = "SELECT * FROM participant_details WHERE name= '$name' ";
     $select = $db->query($query);
-    $row = mysqli_fetch_array($result);
+    $row = mysqli_fetch_array($select);
 
 
 
@@ -19,12 +20,14 @@ if (isset($_POST["name"]) ) {
             print "Name: {$row['username']} has ID: {$row['userId']}";
         }*/
         
-            if ($row["name"]==$name) {
+            if ($row["name"] ==$name) {
                 setcookie("username", $row['name'], time() + 60*60*24, "/");
                 $_SESSION["username"] = $_POST["name"];
+                setcookie("userid", $row['participantID'], time() + 60*60*24, "/");
+
                 
                 header("Location: profile.php");
-                echo($_POST["email"]);
+            
             } else {
                 header("Location: create_profile.php");
                 
