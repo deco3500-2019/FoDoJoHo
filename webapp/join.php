@@ -6,12 +6,17 @@ $db = new MySQLDatabase();
 $db->connect();
 
 $lobbyID = $_COOKIE["royaleID"];
+$userID = $_COOKIE["userid"];
 
 $query = "SELECT * FROM lobby WHERE lobbyID = '$lobbyID' ";
 $select = $db->query($query);
-$select = $db->query($query);
 $row = mysqli_fetch_array($select);
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $query = "INSERT INTO lobby_join (participantID, lobbyID, checked) VALUES ('$userID' ,'$lobbyID', '1' )";
+        $db->query($query);
+}
 
 ?>
 
@@ -51,7 +56,7 @@ $row = mysqli_fetch_array($select);
             <div id="joining">
                 <H5>You will be Joining:</H5>
                 <button type="button" class="btn btn-lg btn-outline-success"><?php echo $row["title"] ?></button>
-
+                <p>created By <?php echo $row["creator"] ?></p>
                 <table class=" join_details mt-3 table table-striped text-center">
                     <tr class="text-center">
                         <td id="player_limit"><strong><?php echo $row["number"] ?></strong> Players</td>
@@ -65,8 +70,10 @@ $row = mysqli_fetch_array($select);
                 <textarea name="" id="" cols="20" rows="10"><?php echo $row["description"] ?></textarea>
             </div>
             <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="next">
-                    </div>
+                <form action="#" method="POST">
+                <input type="submit" class="btn btn-success" value="Join">
+                </form>
+            </div>
 
         </div>
 
