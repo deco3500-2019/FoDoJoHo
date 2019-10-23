@@ -7,10 +7,10 @@
         $db->connect();
 
         // query database for records
-        $query = "SELECT * FROM lobby ORDER BY lobbyID DESC";
-        $select = $db->query($query);
+        $query = "SELECT * FROM lobby ";
+        $result = $db->query($query);
         foreach ($select as $key) {
-            $entry[] = array('lobbyID' => $key['lobbyID'], 'title' => $key['title'], 'number' => $key['number'], 'participants' => $key['participants'], 'active' => $key['active']);
+            $entry[] = array('lobbyID' => $key['lobbyID'], 'title' => $key['title'], 'number' => $key['number'], 'active' => $key['active']);
         }
 
         $lobbies = json_encode($entry);
@@ -29,9 +29,9 @@
         var lobbyID = lobbyInfo[i].lobbyID;
         var title = lobbyInfo[i].title;
         var number = lobbyInfo[i].number;
-        var participants = lobbyInfo[i].participants;
+        // var participants = lobbyInfo[i].participants;
         var active = lobbyInfo[i].active;
-        var participantsArray = participants.split(', ');
+        // var participantsArray = participants.split(', ');
 
         
         // Style formatting goes in here
@@ -49,21 +49,21 @@
 
         $('#lobbyContent').append(infoString);
 
-        while (participantsArray.length > k) {
+        // while (participantsArray.length > k) {
 
-            var l = k + 1;
-            playerString = 
-                '<p> Player ' + l + ': ' +
-                    participantsArray[k] +
-                '</p>';
+        //     var l = k + 1;
+        //     playerString = 
+        //         '<p> Player ' + l + ': ' +
+        //             participantsArray[k] +
+        //         '</p>';
 
-            $("#entry" + j + "Players").append(playerString);
-            k++;
-        }
+        //     $("#entry" + j + "Players").append(playerString);
+        //     k++;
+        // }
 
         var actionString;
 
-        if (number == participantsArray.length && active == 1) {
+        if (active == 1) {
             actionString = '<p> Match Active </p>';
             $("#entry" + j + "Players").append(actionString);
         } else if (number == participantsArray.length || participantsArray.includes('<?php echo $_SESSION["name"] ?>') == true) {
