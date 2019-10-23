@@ -9,7 +9,7 @@ class mySQLDatabase {
 
     //private $link = null;
     private $dbhost = 'localhost';
-    private $dbuser = 'root';
+    private $dbuser = 'NewUser';
     private $dbpassword = '';
     private $db = 'bhbr';
 

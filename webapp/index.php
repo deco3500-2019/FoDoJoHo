@@ -29,7 +29,7 @@ session_start();
 
     <div class="name">
     <h1>
-            BETTER HABBIT
+            BETTER HABITS
         </h1>
         <h2>
             Battle Royale
