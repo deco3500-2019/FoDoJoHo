@@ -14,6 +14,16 @@ if ($select->num_rows > 0) {
     $event_details = null;
 }
 
+if (isset($_POST["join"])) {
+
+    $royaleID = $_POST["lobbyID"];
+
+    setcookie("royaleID", $royaleID, time() + 60*60*24, "/");
+
+
+    header("Location: join.php");
+}
+
 
 ?>
 
@@ -90,19 +100,24 @@ if ($select->num_rows > 0) {
                     <tr class="text-center">
                         <td id="id"><strong>ID</strong></td>
                         <td id="title"><strong>Title</strong></td>
-                        <td id="number"><strong>No. of Participants </strong></td>
+                        <td id="number"><strong>limit </strong></td>
+                        <td><strong></strong></td>
+
 
                     </tr>
                     <?php if ($event_details != null) : ?>
                         <?php while ($row = $event_details->fetch_array()) : ?>
-                            <tr>
-                                <input type="hidden" name="action" value="update">
-                                <input type="hidden" name="id" value="<?php echo $row[""] ?>">
-                                <td><input type="text" name="lobbyID" class="form-control-plaintext" value="<?php echo $row["lobbyID"] ?>"></td>
-                                <td><input type="text" name="title" class="form-control-plaintext " value="<?php echo $row["title"] ?>"></td>
-                                <td><input type="text" name="participants" class="form-control-plaintext " value="<?php echo $row["number"] ?>"></td>
+                            <form action="#" method="POST">
+                                <tr>
+                                    <input type="hidden" name="action" value="update">
+                                    <input type="hidden" name="id" value="<?php echo $row["lobbyID"] ?>">
+                                    <td><input type="text" name="lobbyID" class="form-control-plaintext" value="<?php echo $row["lobbyID"] ?>"></td>
+                                    <td><input type="text" name="title" class="form-control-plaintext " value="<?php echo $row["title"] ?>"></td>
+                                    <td><input type="text" name="participants" class="form-control-plaintext " value="<?php echo $row["number"] ?>"></td>
+                                    <td><button type="submit" class="btn btn-success" name="join">Join</button></td>
 
-                                <!-- <td><input type="date" name="date" class="form-control  " value="<?php echo $row["date"] ?>"></td>
+
+                                    <!-- <td><input type="date" name="date" class="form-control  " value="<?php echo $row["date"] ?>"></td>
                         <td><input type="time" name="time" class="form-control" value="<?php echo $row["time"] ?>"></td>
                         <td><input type="text" name="location" class="form-control" value="<?php echo $row["location"] ?>"></td>
                         <td><input type="text" name="description" class="form-control" value="<?php echo $row["description"] ?>"></td> 
@@ -112,10 +127,10 @@ if ($select->num_rows > 0) {
 
 
 
-                                <!-- <td><input type="submit" class="btn btn-danger btn-sm"  name="delete_button" value="delete" /></td> -->
+                                    <!-- <td><input type="submit" class="btn btn-danger btn-sm"  name="delete_button" value="delete" /></td> -->
 
 
-                            </tr>
+                                </tr>
                             </form>
                         <?php endwhile ?>
                     <?php endif ?>
@@ -132,7 +147,6 @@ if ($select->num_rows > 0) {
         <?php include "footer.php" ?>
     </div>
 
-    <script src="scripts/addPopup.js" type="text/javascript"></script>
 
 
 

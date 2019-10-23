@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php include "footer.php" ?>
     </div>
 
-    <script src="scripts/addPopup.js" type="text/javascript"></script>
+   
 
 
 
