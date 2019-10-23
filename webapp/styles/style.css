@@ -50,5 +50,31 @@ footer{
     margin: auto;
 }
 .lobbies{
-    
+    margin: auto;
+    width: 360px;
+    height: 450px;
+    overflow: scroll;
 }
+
+.searchbar{
+padding: 20px 30px 0 30px;
+}
+table{
+    font-size: 1em;
+}
+table #id{
+    width: 20px;
+}
+table #title{
+    overflow: auto;
+}
+p{
+    margin: 0;
+}
+table #number{
+    width: 10px;
+}
+.btn-group{
+    padding: 10px;
+}
+

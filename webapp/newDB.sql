@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2019 at 07:47 PM
+-- Generation Time: Oct 23, 2019 at 05:17 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `bhbr`
 --
+DROP DATABASE IF EXISTS `bhbr`;
+CREATE DATABASE IF NOT EXISTS `bhbr` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bhbr`;
 
 -- --------------------------------------------------------
 
@@ -87,20 +90,24 @@ CREATE TABLE `participant_details` (
   `participantID` int(100) NOT NULL,
   `name` varchar(200) NOT NULL,
   `age` int(100) NOT NULL,
-  `city` varchar(200) NOT NULL
+  `city` varchar(200) NOT NULL,
+  `points` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `participant_details`
 --
 
-INSERT INTO `participant_details` (`participantID`, `name`, `age`, `city`) VALUES
-(1, 'Fardeen', 20, 'Brisbane'),
-(2, 'Jo', 20, 'Brisbane'),
-(3, 'Paul', 21, 'Sydney'),
-(4, 'Justin', 19, 'Brisbane'),
-(5, 'Howard', 28, 'Brisbane'),
-(7, 'sam', 20, 'LA');
+INSERT INTO `participant_details` (`participantID`, `name`, `age`, `city`, `points`) VALUES
+(1, 'Fardeen', 20, 'Brisbane', 0),
+(2, 'Jo', 20, 'Brisbane', 0),
+(3, 'Paul', 21, 'Sydney', 0),
+(4, 'Justin', 19, 'Brisbane', 0),
+(5, 'Howard', 28, 'Brisbane', 0),
+(7, 'sam', 20, 'LA', 0),
+(8, 'sam', 20, 'la', 0),
+(9, 'jeff', 25, 'Brissy', 0),
+(10, 'jo', 23, 'sydney', 0);
 
 --
 -- Indexes for dumped tables
@@ -146,7 +153,7 @@ ALTER TABLE `lobby_join`
 -- AUTO_INCREMENT for table `participant_details`
 --
 ALTER TABLE `participant_details`
-  MODIFY `participantID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `participantID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

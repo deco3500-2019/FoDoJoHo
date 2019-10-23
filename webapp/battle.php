@@ -1,7 +1,18 @@
 <?php
+require 'scripts/connectDatabase.php';
 session_start();
 
+$db = new MySQLDatabase();
+$db->connect();
 
+$query = "SELECT * FROM lobby ";
+$select = $db->query($query);
+
+if ($select->num_rows > 0) {
+    $event_details = $select;
+} else {
+    $event_details = null;
+}
 
 
 ?>
@@ -37,36 +48,83 @@ session_start();
 
         <div class="content">
 
-            <div class="lobbies">
-                <div id="addLobbyForm" style="display: none;">
-                    <div id="lobbyFormatting">
-                        <div class="row">
-                            <div class="col-9">
-                            </div>
-                            <div class="col-2" id="popupClose">
-                                <p> Close </p>
-                            </div>
-                        </div>
-                        <form action="scripts/addLobby.php" method="POST">
-                            <p>
-                                Lobby Title:
-                                <input type="text" name="title" required>
-                            </p>
-                            <p>
-                                Max Players:
-                                <input type="number" name="number" value="16" required>
-                            </p>
-                            <button type="submit">Create Lobby</button>
-                        </form>
-                    </div>
+
+            <div class="input-group input-group-sm mb-3 searchbar">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                 </div>
-                <div class="container" id="lobbyContent">
-                    <button id="showAddPopup">
-                        Add
-                    </button>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+
+
+            </div>
+
+            <hr>
+            <p>Filters</p>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Action
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
                 </div>
             </div>
-            <?php include 'scripts/lobbyLoader.php' ?>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Action
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+
+            <div class="lobbies">
+                <table class="mt-3 table table-striped text-center">
+                    <tr class="text-center">
+                        <td id="id"><strong>ID</strong></td>
+                        <td id="title"><strong>Title</strong></td>
+                        <td id="number"><strong>No. of Participants </strong></td>
+
+                    </tr>
+                    <?php if ($event_details != null) : ?>
+                        <?php while ($row = $event_details->fetch_array()) : ?>
+                            <tr>
+                                <input type="hidden" name="action" value="update">
+                                <input type="hidden" name="id" value="<?php echo $row[""] ?>">
+                                <td><input type="text" name="lobbyID" class="form-control-plaintext" value="<?php echo $row["lobbyID"] ?>"></td>
+                                <td><input type="text" name="title" class="form-control-plaintext " value="<?php echo $row["title"] ?>"></td>
+                                <td><input type="text" name="participants" class="form-control-plaintext " value="<?php echo $row["number"] ?>"></td>
+
+                                <!-- <td><input type="date" name="date" class="form-control  " value="<?php echo $row["date"] ?>"></td>
+                        <td><input type="time" name="time" class="form-control" value="<?php echo $row["time"] ?>"></td>
+                        <td><input type="text" name="location" class="form-control" value="<?php echo $row["location"] ?>"></td>
+                        <td><input type="text" name="description" class="form-control" value="<?php echo $row["description"] ?>"></td> 
+                        <td> <textarea type="text" name="description" class="form-control" value=""><?php echo $row["description"] ?></textarea></td> -->
+
+
+
+
+
+                                <!-- <td><input type="submit" class="btn btn-danger btn-sm"  name="delete_button" value="delete" /></td> -->
+
+
+                            </tr>
+                            </form>
+                        <?php endwhile ?>
+                    <?php endif ?>
+                </table>
+
+
+
+
+            </div>
 
         </div>
 
