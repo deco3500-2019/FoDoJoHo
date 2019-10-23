@@ -126,6 +126,7 @@ if ($select->num_rows > 0) {
 
             </div>
 
+            <a type="button" class="btn btn-warning" href="lobby.php">Create Battle Royale</a>
         </div>
 
         <?php include "footer.php" ?>

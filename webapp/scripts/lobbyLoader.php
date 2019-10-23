@@ -8,7 +8,7 @@
 
         // query database for records
         $query = "SELECT * FROM lobby ";
-        $select = $db->query($query);
+        $result = $db->query($query);
         foreach ($select as $key) {
             $entry[] = array('lobbyID' => $key['lobbyID'], 'title' => $key['title'], 'number' => $key['number'], 'active' => $key['active']);
         }

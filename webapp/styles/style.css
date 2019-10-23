@@ -63,7 +63,7 @@ table{
     font-size: 1em;
 }
 table #id{
-    width: 20px;
+    width: 30px;
 }
 table #title{
     overflow: auto;
@@ -78,3 +78,7 @@ table #number{
     padding: 10px;
 }
 
+#addLobby{
+    padding: 20px;
+    overflow: auto;
+}
