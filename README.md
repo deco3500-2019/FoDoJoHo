@@ -1,7 +1,7 @@
 # FoDoJoHo
 The boys taking on SoMoLo.
 
-# Bad Habits Battle Royal
+# Better Habits Battle Royale
 
 ## Link To Project Proposal
 https://github.com/deco3500-2019/FoDoJoHo/wiki/Proposal
@@ -13,5 +13,5 @@ link to final report
 Bad Habits Battle Royale Click-through prototype:
 
 
-Bad Habits Battle Royale Web-application:
+Better Habits Battle Royale Web-application:
 https://s4484899-bhbr.uqcloud.net/
